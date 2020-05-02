@@ -1,1 +1,190 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  //palette
+  --white: #fff;
+
+  --gray: #ddd;
+
+  --red: #D9435F;
+  --blue: #5E66F2;
+  --yellow: #F2CB07;
+  --green: #49bf8a;
+  --dark: #06080D;
+
+  //spacing
+  --s-xl: 1.5rem;
+  --s-l: 1.4rem;
+  --s-m: 1rem;
+  --s-s: .8rem;
+  --s-xs: .2rem;
+
+  font-size: 16px;
+  min-width: 20rem;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: var(--white);
+  background-color: var(--dark);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+
+h1 {
+  @extend .txt--xxl;
+}
+
+h2 {
+  @extend .txt--xl;
+}
+
+h3 {
+  @extend .txt--l;
+}
+
+h4 {
+  @extend .txt--m;
+}
+
+.txt {
+
+  // txt sizes
+  &--xxxl {
+    font-size: 5em;
+  }
+
+  &--xxl {
+    font-size: 3em;
+  }
+
+  &--xl {
+    font-size: 2em;
+  }
+
+  &--l {
+    font-size: 1.5em;
+  }
+
+  &--m {
+    font-size: 1.17em;
+  }
+
+  // txt colors
+  &--contrast {
+    color: var(--yellow);
+
+    &--g {
+      color: var(--green);
+    }
+
+    &--b {
+      color: var(--blue);
+    }
+
+    &--r {
+      color: var(--red);
+    }
+  }
+
+  // txt utils
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--regular {
+    font-weight: 400;
+  }
+
+  &--light {
+    font-weight: 200;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--left {
+    text-align: left;
+  }
+}
+
+.border-radius {
+  border-radius: 50%;
+
+  &--s {
+    border-radius: .2rem;
+  }
+
+  &--m {
+    border-radius: .5rem;
+  }
+
+  &--l {
+    border-radius: 1rem;
+  }
+}
+
+.divisor {
+  height: 1px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.card {
+  @extend .border-radius--l;
+  padding: var(--s-xl);
+}
+
+.gutter>* {
+  margin-right: var(--s-m);
+
+  &:first-child {
+    margin-left: var(--s-m);
+  }
+}
+
+.gutter {
+  &--horizontal {
+    >* {
+      margin-right: var(--s-m);
+    }
+
+    >:first-child {
+      margin-left: var(--s-m);
+    }
+  }
+
+  &--vertical {
+    >*:not(:last-child) {
+      margin-bottom: var(--s-m);
+    }
+  }
+}
+
+main.contain {
+  max-width: 80rem;
+  margin: auto;
+}
