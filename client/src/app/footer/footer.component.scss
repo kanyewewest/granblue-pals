@@ -1,0 +1,17 @@
+footer {
+  color: var(--gray);
+  margin-top: var(--s-m);
+  margin-bottom: var(--s-m);
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-bottom: var(--s-m);
+
+      &:first-child {
+        padding-top: var(--s-m);
+      }
+    }
+  }
+}

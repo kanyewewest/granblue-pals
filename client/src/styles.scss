@@ -10,7 +10,7 @@ body {
   //palette
   --white: #fff;
 
-  --gray: #ddd;
+  --gray: #6c6c6c;
 
   --red: #D9435F;
   --blue: #5E66F2;
@@ -26,7 +26,11 @@ body {
   --s-xs: .2rem;
 
   font-size: 16px;
-  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-width: 30rem;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -44,7 +48,6 @@ body {
   outline: none;
 }
 
-
 h1 {
   @extend .txt--xxl;
 }
@@ -59,6 +62,20 @@ h3 {
 
 h4 {
   @extend .txt--m;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+
+  &.active {
+    @extend .txt--bold,
+    .txt--contrast;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
 }
 
 .txt {
@@ -82,6 +99,14 @@ h4 {
 
   &--m {
     font-size: 1.17em;
+  }
+
+  &--s {
+    font-size: .875em;
+  }
+
+  &--xs {
+    font-size: .75em;
   }
 
   // txt colors
@@ -184,7 +209,7 @@ h4 {
   }
 }
 
-main.contain {
+.contain {
   max-width: 80rem;
   margin: auto;
 }
