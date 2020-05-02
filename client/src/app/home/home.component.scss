@@ -1,0 +1,41 @@
+.hero {
+  display: flex;
+  flex-flow: row wrap;
+
+  .title {
+    margin: auto;
+
+    >:first-child {
+      padding-left: var(--s-s);
+      padding-right: var(--s-s);
+      background: var(--blue);
+    }
+
+    p {
+      margin-top: var(--s-s);
+      width: 0;
+      min-width: 100%;
+    }
+  }
+
+  .mascot {
+    display: block;
+    width: 40%;
+    min-width: 15rem;
+    margin: auto;
+  }
+}
+
+.instructions {
+  display: flex;
+  flex-flow: row nowrap;
+
+  >* {
+    text-align: center;
+    border: 1px solid white;
+
+    img {
+      width: 100%;
+    }
+  }
+}
