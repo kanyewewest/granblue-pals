@@ -69,11 +69,6 @@ a {
   color: inherit;
   cursor: pointer;
 
-  &.active {
-    @extend .txt--bold,
-    .txt--contrast;
-  }
-
   &:hover {
     opacity: .8;
   }
@@ -170,6 +165,16 @@ a {
 
   &--l {
     border-radius: 1rem;
+  }
+}
+
+.margin-auto {
+  &--right {
+    margin-right: auto;
+  }
+
+  &--left {
+    margin-left: auto;
   }
 }
 
