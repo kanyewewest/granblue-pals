@@ -1,6 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// CSS style resets
+@import '~normalize.css';
+
+// Font loading
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+// HTML element styles
 html,
 body {
   height: 100%;
@@ -11,6 +15,7 @@ body {
   --white: #fff;
 
   --gray: #6c6c6c;
+  --gray-1: hsla(225, 16%, 21%, 1);
 
   --red: #D9435F;
   --blue: #5E66F2;
@@ -73,6 +78,23 @@ a {
     opacity: .8;
   }
 }
+
+input[type="text"],
+input[type="number"] {
+  @extend .border-radius--m;
+  padding: var(--s-s);
+  background-color: var(--dark);
+  border: 2px solid var(--blue);
+  width: 100%;
+
+  &,
+  &::placeholder {
+    color: var(--white);
+    opacity: 1;
+  }
+}
+
+// Quick styling
 
 .txt {
 
@@ -150,6 +172,15 @@ a {
   &--left {
     text-align: left;
   }
+
+  @for $i from 1 through 5 {
+    &--clip--#{$i} {
+      display: -webkit-box;
+      -webkit-line-clamp: #{$i};
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
 }
 
 .border-radius {
@@ -178,25 +209,6 @@ a {
   }
 }
 
-.divisor {
-  height: 1px;
-  width: 100%;
-  background-color: var(--white);
-}
-
-.card {
-  @extend .border-radius--l;
-  padding: var(--s-xl);
-}
-
-.gutter>* {
-  margin-right: var(--s-m);
-
-  &:first-child {
-    margin-left: var(--s-m);
-  }
-}
-
 .gutter {
   &--horizontal {
     >* {
@@ -213,9 +225,35 @@ a {
       margin-bottom: var(--s-m);
     }
   }
+
+  &--all {
+    @extend .gutter--vertical;
+    margin-left: var(--s-m);
+    margin-right: var(--s-m);
+  }
 }
 
 .contain {
   max-width: 80rem;
   margin: auto;
+}
+
+// Hard classes
+
+.divisor {
+  height: 1px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.card {
+  padding: var(--s-xl);
+}
+
+.badge {
+  @extend .border-radius--m;
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: var(--s-xs);
 }
