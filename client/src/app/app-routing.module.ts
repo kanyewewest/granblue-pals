@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path: 'pals',
+    loadChildren: () => import('./pals/pals.module').then((m) => m.PalsModule),
+  },
 ];
 
 @NgModule({
