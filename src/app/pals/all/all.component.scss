@@ -1,0 +1,14 @@
+.posts {
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--s-l);
+    justify-content: stretch;
+
+    &>* {
+      cursor: pointer;
+      padding: var(--s-m);
+    }
+  }
+}

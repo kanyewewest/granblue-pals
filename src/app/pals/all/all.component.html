@@ -1,1 +1,12 @@
-<p>all works!</p>
+<div class="gutter--all">
+  <section class="filters">
+    <input type="text" placeholder="Search">
+  </section>
+  <section class="posts">
+    <ul>
+      <li class="card" *ngFor="let post of posts">
+        <app-card-pal></app-card-pal>
+      </li>
+    </ul>
+  </section>
+</div>

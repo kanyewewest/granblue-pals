@@ -5,9 +5,10 @@ import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { PalsComponent } from './pals/pals.component';
 import { PalsRoutingModule } from './pals.routing';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [AllComponent, NewComponent, EditComponent, PalsComponent],
-  imports: [CommonModule, PalsRoutingModule],
+  imports: [CommonModule, PalsRoutingModule, SharedModule],
 })
 export class PalsModule {}
