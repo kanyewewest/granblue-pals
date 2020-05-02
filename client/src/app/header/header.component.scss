@@ -6,10 +6,6 @@ nav {
     justify-content: flex-end;
     align-items: center;
 
-    >:first-child {
-      margin-right: auto;
-    }
-
     li {
       padding: var(--s-m);
     }
