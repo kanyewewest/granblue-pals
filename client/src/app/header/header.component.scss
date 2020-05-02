@@ -1,0 +1,21 @@
+nav {
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+
+    >:first-child {
+      margin-right: auto;
+    }
+
+    li {
+      padding: var(--s-m);
+    }
+  }
+}
+
+.logo>:first-child {
+  background-color: var(--blue);
+}

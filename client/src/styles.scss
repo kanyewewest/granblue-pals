@@ -67,6 +67,7 @@ h4 {
 a {
   text-decoration: inherit;
   color: inherit;
+  cursor: pointer;
 
   &.active {
     @extend .txt--bold,
