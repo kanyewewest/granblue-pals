@@ -1,16 +1,13 @@
 /* #region Sass variables */
-$colors-tint: 'red',
-'green',
-'blue',
-'yellow';
-$colors-light: 'white',
-'gray',
-'dark';
+@use './styles/_sass-variables'as v;
 /* #endregion Sass variables */
 
-/* #region CSS style resets */
-@import '~normalize.css';
-/* #endregion CSS style resets */
+/* #endregion Load utilities modules */
+
+@use './styles/_reset';
+@use './styles/_quick-styling';
+
+/* #endregion Load utilities modules */
 
 /* #region Font loading */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
@@ -55,14 +52,8 @@ body {
   background-color: var(--dark);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:focus {
-  outline: none;
+a:hover {
+  opacity: .8;
 }
 
 h1 {
@@ -81,18 +72,9 @@ h4 {
   @extend .txt--m;
 }
 
-a {
-  text-decoration: inherit;
-  color: inherit;
-  cursor: pointer;
-
-  &:hover {
-    opacity: .8;
-  }
-}
-
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+.searchbar {
   @extend .border-radius--m;
   padding: var(--s-s);
   background-color: var(--dark);
@@ -108,147 +90,7 @@ input[type="number"] {
 
 /* #endregion HTML element styles */
 
-/* #region Quick styling */
-
-.txt {
-
-  // txt sizes
-  &--xxxl {
-    font-size: 5em;
-  }
-
-  &--xxl {
-    font-size: 3em;
-  }
-
-  &--xl {
-    font-size: 2em;
-  }
-
-  &--l {
-    font-size: 1.5em;
-  }
-
-  &--m {
-    font-size: 1.17em;
-  }
-
-  &--s {
-    font-size: .875em;
-  }
-
-  &--xs {
-    font-size: .75em;
-  }
-
-  // txt colors
-  &--contrast {
-    color: var(--yellow);
-
-    @each $color in $colors-tint {
-      &--#{$color} {
-        color: var(#{$color});
-      }
-    }
-  }
-
-  // txt utils
-  &--bold {
-    font-weight: bold;
-  }
-
-  &--regular {
-    font-weight: 400;
-  }
-
-  &--light {
-    font-weight: 200;
-  }
-
-  &--italic {
-    font-style: italic;
-  }
-
-  &--center {
-    text-align: center;
-  }
-
-  &--right {
-    text-align: right;
-  }
-
-  &--left {
-    text-align: left;
-  }
-
-  @for $i from 1 through 5 {
-    &--clip--#{$i} {
-      display: -webkit-box;
-      -webkit-line-clamp: #{$i};
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-  }
-}
-
-.border-radius {
-  border-radius: 50%;
-
-  &--s {
-    border-radius: .2rem;
-  }
-
-  &--m {
-    border-radius: .5rem;
-  }
-
-  &--l {
-    border-radius: 1rem;
-  }
-}
-
-.margin-auto {
-  &--right {
-    margin-right: auto;
-  }
-
-  &--left {
-    margin-left: auto;
-  }
-}
-
-.gutter {
-  &--horizontal {
-    >* {
-      margin-right: var(--s-m);
-    }
-
-    >:first-child {
-      margin-left: var(--s-m);
-    }
-  }
-
-  &--vertical {
-    >*:not(:last-child) {
-      margin-bottom: var(--s-m);
-    }
-  }
-
-  &--all {
-    @extend .gutter--vertical;
-    margin-left: var(--s-m);
-    margin-right: var(--s-m);
-  }
-}
-
-.contain {
-  max-width: 80rem;
-  margin: auto;
-}
-
-/* #endregion Quick styling */
-
-/* #region Hard classes */
+/* #region Blocks */
 
 .divisor {
   height: 1px;
@@ -257,6 +99,7 @@ input[type="number"] {
 }
 
 .card {
+  @extend .border-radius--m;
   padding: var(--s-xl);
 }
 
@@ -275,14 +118,64 @@ input[type="number"] {
 
   &.inactive {
     background-color: unset;
+    border-style: dashed;
   }
 
-  @each $color in $colors-tint {
+  @each $color in v.$colors-tint {
     &--#{$color} {
-      background-color: var(#{$color});
-      border-color: var(#{$color});
+      background-color: var(--#{$color});
+      border-color: var(--#{$color});
     }
   }
 }
 
-/* #endregion Hard classes */
+.form {
+  @extend .gutter--vertical;
+
+  &__group {
+    display: flex;
+    flex-flow: column;
+
+    &--row-wrap {
+      @extend .gutter--horizontal;
+      flex-flow: row wrap;
+      // Force .gutter--vertical for all childs instead of parent
+      // TODO: Find a way to have similar interaction
+      // without this (too hacky) and doesn't work well with
+      // .form__group--row-wrap as last element of a form
+      // as it forces a margin on it
+      margin-bottom: 0 !important;
+
+      &:not(:last-child)>* {
+        margin-bottom: var(--s-m) !important;
+      }
+    }
+
+    &--row-nowrap {
+      @extend .gutter--horizontal;
+      flex-flow: row nowrap;
+    }
+
+    &:not(.form__group--row-nowrap):not(.form__group--row-wrap) {
+      @extend .gutter--vertical;
+    }
+  }
+}
+
+.searchbar {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0;
+
+  input {
+    padding: 0;
+    border: none;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: var(--s-s);
+}
+
+/* #endregion Blocks */
