@@ -1,10 +1,22 @@
-// CSS style resets
+/* #region Sass variables */
+$colors-tint: 'red',
+'green',
+'blue',
+'yellow';
+$colors-light: 'white',
+'gray',
+'dark';
+/* #endregion Sass variables */
+
+/* #region CSS style resets */
 @import '~normalize.css';
+/* #endregion CSS style resets */
 
-// Font loading
+/* #region Font loading */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+/* #endregion Font loading */
 
-// HTML element styles
+/* #region HTML element styles */
 html,
 body {
   height: 100%;
@@ -94,7 +106,9 @@ input[type="number"] {
   }
 }
 
-// Quick styling
+/* #endregion HTML element styles */
+
+/* #region Quick styling */
 
 .txt {
 
@@ -131,16 +145,10 @@ input[type="number"] {
   &--contrast {
     color: var(--yellow);
 
-    &--g {
-      color: var(--green);
-    }
-
-    &--b {
-      color: var(--blue);
-    }
-
-    &--r {
-      color: var(--red);
+    @each $color in $colors-tint {
+      &--#{$color} {
+        color: var(#{$color});
+      }
     }
   }
 
@@ -238,7 +246,9 @@ input[type="number"] {
   margin: auto;
 }
 
-// Hard classes
+/* #endregion Quick styling */
+
+/* #region Hard classes */
 
 .divisor {
   height: 1px;
@@ -251,10 +261,28 @@ input[type="number"] {
 }
 
 .badge {
-  @extend .border-radius--m;
+  @extend .txt--s,
+  .border-radius--m;
   display: inline-block;
-  background-color: var(--blue);
   color: var(--white);
   padding: var(--s-xs);
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+
   margin: var(--s-xs);
+  cursor: pointer;
+  min-height: 0;
+
+  &.inactive {
+    background-color: unset;
+  }
+
+  @each $color in $colors-tint {
+    &--#{$color} {
+      background-color: var(#{$color});
+      border-color: var(#{$color});
+    }
+  }
 }
+
+/* #endregion Hard classes */
