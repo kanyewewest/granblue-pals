@@ -1,52 +1,57 @@
 <div class="gutter--all">
   <section class="search">
     <form class="form">
-      <div class="form__group form__group--row-nowrap">
+      <div class="search__input border-radius--m form__group form__group--row-nowrap">
         <div class="searchbar">
           <button type="button" class="btn">
             <img src="assets/icons/search.svg" />
           </button>
           <input type="text" placeholder="Search" />
         </div>
-        <button type="button" class="btn">
-          <img src="assets/icons/arrow-down.svg" />
-        </button>
       </div>
-      <div class="form__group form__group--row-wrap">
-        <div class="form__group txt--s search-filter">
-          <label>Min Rank</label>
-          <input type="number" placeholder="0" />
+      <div class="search__filters txt--bold border-radius--m txt--s">
+        <div class="form__group form__group--row-wrap">
+          <div class="form__group form__group--row-nowrap search__filter--cbx">
+            <label>Granblue ID:</label>
+            <input id="checkbox-granblue" type="checkbox" />
+            <label for="checkbox-granblue"></label>
+          </div>
+          <div class="form__group form__group--row-nowrap search__filter--cbx">
+            <label>Discord</label>
+            <input id="checkbox-discord" type="checkbox" />
+            <label for="checkbox-discord"></label>
+          </div>
+          <div class="form__group form__group--row-nowrap search__filter--cbx">
+            <label>Twitter</label>
+            <input id="checkbox-twitter" type="checkbox" />
+            <label for="checkbox-twitter"></label>
+          </div>
+          <div class="form__group form__group--row-nowrap search__filter--cbx">
+            <label>Email</label>
+            <input id="checkbox-email" type="checkbox" />
+            <label for="checkbox-email"></label>
+          </div>
         </div>
-        <div class="form__group txt--s search-filter">
-          <label>Max Rank</label>
-          <input type="number" placeholder="0" />
+        <div class="form__group form__group--row-wrap">
+          <div class=" form__group form__group--row-nowrap search__filter--num">
+            <label>Min Rank</label>
+            <input type="number" placeholder="0" />
+          </div>
+          <div class="form__group form__group--row-nowrap search__filter--num">
+            <label>Max Rank</label>
+            <input type="number" placeholder="0" />
+          </div>
         </div>
-        <div class="form__group txt--s search-filter">
-          <label>ID</label>
-          <input type="number" placeholder="0" />
+        <div class="form__group form__group--row-wrap">
+          <span class="badge inactive">Badge</span>
+          <span class="badge">Badge</span>
+          <span class="badge">Badge</span>
+          <span class="badge">Badge</span>
+          <span class="badge">Badge</span>
+          <span class="badge badge--green">Badge</span>
+          <span class="badge badge--yellow inactive">Badge</span>
+          <span class="badge badge--red">Badge</span>
         </div>
-        <div class="form__group txt--s search-filter">
-          <label>Discord</label>
-          <input type="number" placeholder="0" />
-        </div>
-        <div class="form__group txt--s search-filter">
-          <label>Twitter</label>
-          <input type="number" placeholder="0" />
-        </div>
-        <div class="form__group txt--s search-filter">
-          <label>Email</label>
-          <input type="number" placeholder="0" />
-        </div>
-      </div>
-      <div class="tags">
-        <span class="badge inactive">Badge</span>
-        <span class="badge">Badge</span>
-        <span class="badge">Badge</span>
-        <span class="badge">Badge</span>
-        <span class="badge">Badge</span>
-        <span class="badge badge--green">Badge</span>
-        <span class="badge badge--yellow inactive">Badge</span>
-        <span class="badge badge--red">Badge</span>
       </div>
     </form>
   </section>
