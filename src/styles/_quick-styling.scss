@@ -1,0 +1,134 @@
+@use './_sass-variables'as v;
+
+.txt {
+
+  // txt sizes
+  &--xxxl {
+    font-size: 5em;
+  }
+
+  &--xxl {
+    font-size: 3em;
+  }
+
+  &--xl {
+    font-size: 2em;
+  }
+
+  &--l {
+    font-size: 1.5em;
+  }
+
+  &--m {
+    font-size: 1.17em;
+  }
+
+  &--s {
+    font-size: .875em;
+  }
+
+  &--xs {
+    font-size: .75em;
+  }
+
+  // txt colors
+  &--contrast {
+    color: var(--yellow);
+
+    @each $color in v.$colors-tint {
+      &--#{$color} {
+        color: var(--#{$color});
+      }
+    }
+  }
+
+  // txt utils
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--regular {
+    font-weight: 400;
+  }
+
+  &--light {
+    font-weight: 200;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  @for $i from 1 through 5 {
+    &--clip--#{$i} {
+      display: -webkit-box;
+      -webkit-line-clamp: #{$i};
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+.border-radius {
+  border-radius: 50%;
+
+  &--s {
+    border-radius: .2rem;
+  }
+
+  &--m {
+    border-radius: .5rem;
+  }
+
+  &--l {
+    border-radius: 1rem;
+  }
+}
+
+.margin-auto {
+  &--right {
+    margin-right: auto;
+  }
+
+  &--left {
+    margin-left: auto;
+  }
+}
+
+.gutter {
+
+  &--horizontal {
+    >:not(:last-child) {
+      margin-right: var(--s-m);
+    }
+  }
+
+  &--vertical {
+    >:not(:last-child) {
+      margin-bottom: var(--s-m);
+    }
+  }
+
+  &--all {
+    @extend .gutter--vertical;
+    margin-left: var(--s-m);
+    margin-right: var(--s-m);
+  }
+}
+
+.contain {
+  max-width: 80rem;
+  margin: auto;
+}

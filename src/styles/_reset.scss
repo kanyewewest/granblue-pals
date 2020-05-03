@@ -1,0 +1,40 @@
+@import '~normalize.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button,
+input {
+  -webkit-appearance: none !important;
+  outline: none !important;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input[type="number"] {
+  text-align: right;
+  -moz-appearance: textfield !important;
+}
+
+button {
+  border: none;
+  line-height: 0;
+  background-color: unset;
+}
