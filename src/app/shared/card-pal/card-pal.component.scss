@@ -20,48 +20,48 @@
       "about"
       "tags";
 
-    .card--title,
-    .card--subtitle {
+    &.card__title,
+    &.card__subtitle {
       justify-self: center;
     }
 
-    .card--logo {
+    &.card__logo {
       width: 8rem;
     }
   }
 
-  &--logo {
+  &__logo {
     width: 4rem;
     grid-area: logo;
   }
 
-  &--title {
+  &__title {
     grid-area: title;
     align-self: center;
   }
 
-  &--subtitle {
+  &__subtitle {
     grid-area: subtitle;
   }
 
-  &--about {
+  &__about {
     grid-area: about;
   }
 
-  &--tags {
+  &__tags {
     grid-area: tags;
     margin: -.2rem;
   }
 
-  &--logo,
-  &--about,
-  &--subtitle {
+  &__logo,
+  &__about,
+  &__subtitle {
     justify-self: center;
   }
 
-  &--logo,
-  &--about,
-  &--title {
+  &__logo,
+  &__about,
+  &__title {
     cursor: pointer;
   }
 }
