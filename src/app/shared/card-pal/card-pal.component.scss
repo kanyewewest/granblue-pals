@@ -4,21 +4,23 @@
   grid-template-columns: 4rem 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "logo title"
-    "subtitle subtitle"
-    "about about"
-    "tags tags";
+    'emojis emojis'
+    'logo title'
+    'subtitle subtitle'
+    'about about'
+    'tags tags';
 
   &--showcase {
     // logo showcase
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-      "title"
-      "logo"
-      "subtitle"
-      "about"
-      "tags";
+      'emojis'
+      'title'
+      'logo'
+      'subtitle'
+      'about'
+      'tags';
 
     &.card__title,
     &.card__subtitle {
@@ -28,6 +30,10 @@
     &.card__logo {
       width: 8rem;
     }
+  }
+
+  &__emojis {
+    grid-area: emojis;
   }
 
   &__logo {
@@ -50,7 +56,7 @@
 
   &__tags {
     grid-area: tags;
-    margin: -.2rem;
+    margin: -0.2rem;
   }
 
   &__logo,

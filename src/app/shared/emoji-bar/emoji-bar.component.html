@@ -1,0 +1,14 @@
+<ul class="emoji__bar">
+  <li
+    *ngFor="let emoji of emojis; let i = index"
+    (click)="clickSlip(i)"
+    [ngClass]="{
+      'emoji__count--increase': hasIncrease[i],
+      'emoji__count--reduce': hasReduce[i]
+    }"
+    class="emoji__slip border-radius--m"
+  >
+    <div class="emoji__count txt--s">{{ emoji.count }}</div>
+    <i class="txt--m" [innerHTML]="emoji.code | emoji"></i>
+  </li>
+</ul>

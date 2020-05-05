@@ -1,0 +1,49 @@
+.emoji {
+  &__bar {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    //overflow-x: scroll;
+  }
+
+  &__slip {
+    width: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--gray-1);
+    margin: var(--s-xs);
+    padding-top: var(--s-xs);
+    padding-bottom: var(--s-xs);
+  }
+
+  &__count {
+    position: relative;
+    padding-top: var(--s-xs);
+
+    &--increase > &::after {
+      content: '+1';
+      color: var(--green);
+      position: absolute;
+      left: 0;
+      right: 0;
+      animation: float-up 1.2s linear;
+      opacity: 0;
+    }
+
+    &--reduce {
+    }
+  }
+}
+
+@keyframes float-up {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-2rem) scale(2);
+    opacity: 0;
+  }
+}
