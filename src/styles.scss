@@ -28,18 +28,18 @@ body {
   --gray-2: hsla(225, 26%, 14%, 1);
   --gray-3: hsla(223, 15%, 35%, 1);
 
-  --red: #D9435F;
-  --blue: #5E66F2;
-  --yellow: #F2CB07;
+  --red: #d9435f;
+  --blue: #5e66f2;
+  --yellow: #f2cb07;
   --green: #49bf8a;
-  --dark: #06080D;
+  --dark: #06080d;
 
   //spacing
   --s-xl: 1.5rem;
   --s-l: 1.4rem;
   --s-m: 1rem;
-  --s-s: .8rem;
-  --s-xs: .2rem;
+  --s-s: 0.8rem;
+  --s-xs: 0.2rem;
 
   font-size: 16px;
   display: flex;
@@ -55,7 +55,7 @@ body {
 }
 
 a:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 h1 {
@@ -74,8 +74,8 @@ h4 {
   @extend .txt--m;
 }
 
-input[type="text"],
-input[type="number"],
+input[type='text'],
+input[type='number'],
 .searchbar {
   @extend .border-radius--m;
   padding: var(--s-s);
@@ -89,19 +89,18 @@ input[type="number"],
   }
 
   &::placeholder {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
-
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
 
-  &:checked+label:after {
+  &:checked + label:after {
     opacity: 1;
   }
 
-  &+label {
+  & + label {
     @extend .border-radius--m;
     border: 2px solid var(--blue);
     display: block;
@@ -112,7 +111,7 @@ input[type="checkbox"] {
 
     &:after {
       @extend .border-radius--s;
-      content: "";
+      content: '';
       position: absolute;
       background-color: var(--blue);
       top: 0;
@@ -123,7 +122,7 @@ input[type="checkbox"] {
       height: 1rem;
       margin: auto;
       opacity: 0;
-      transition: opacity .2s ease-in;
+      transition: opacity 0.2s ease-in;
     }
   }
 }
@@ -131,6 +130,13 @@ input[type="checkbox"] {
 /* #endregion HTML element styles */
 
 /* #region Blocks */
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
 
 .divisor {
   height: 1px;
@@ -187,7 +193,7 @@ input[type="checkbox"] {
       // as it forces a margin on it
       margin-bottom: 0 !important;
 
-      &:not(:last-child)>* {
+      &:not(:last-child) > * {
         margin-bottom: var(--s-m) !important;
       }
     }
@@ -224,7 +230,7 @@ input[type="checkbox"] {
     list-style: none;
     justify-content: center;
 
-    &>.btn {
+    & > .btn {
       background-color: var(--gray-1);
 
       &:first-child {

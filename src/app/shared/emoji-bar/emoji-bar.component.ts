@@ -7,12 +7,12 @@ import { IEmojiBar } from '../../core/models/emoji-bar';
   styleUrls: ['./emoji-bar.component.scss'],
 })
 export class EmojiBarComponent {
-  // Variables for count animation on change
+  //Variables for count animation on change
   hasIncrease: boolean[] = Array<boolean>(5);
   hasReduce: boolean[] = Array<boolean>(5);
 
-  // Index of the emoji from this user the... user
-  // has already voted previously for.
+  //Index of the emoji from this user the... user
+  //has already voted previously for.
   emojiVotedIndex?: number;
   emojis: IEmojiBar[] = [
     {
