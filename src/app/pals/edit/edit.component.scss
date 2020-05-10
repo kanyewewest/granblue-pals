@@ -1,0 +1,15 @@
+.flex-wrapper {
+  overflow: hidden;
+}
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+
+  app-card-pal-new {
+    display: block;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}

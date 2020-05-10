@@ -1,6 +1,7 @@
 .card {
   display: grid;
   gap: var(--s-xl);
+  grid-gap: var(--s-xl);
   grid-template-columns: 4rem 1fr;
   grid-template-rows: auto;
   grid-template-areas:

@@ -1,18 +1,20 @@
 <div class="gutter--all">
   <header class="pals">
     <div class="pals__lads">
-      <img src="assets/cag01.png">
-      <img src="assets/cag02.png">
-      <img src="assets/cag03.png">
+      <img src="assets/cag01.png" />
+      <img src="assets/cag02.png" />
+      <img src="assets/cag03.png" />
     </div>
     <ul class="btn--multiple">
       <li class="btn selected">Crews</li>
       <li class="btn">Players</li>
     </ul>
   </header>
-  <section class="search">
-    <form class="form">
-      <div class="search__input border-radius--m form__group form__group--row-nowrap">
+  <section class="card search">
+    <form class="form gutter--vertical">
+      <div
+        class="search__input border-radius--m form__group form__group--row-nowrap"
+      >
         <div class="searchbar">
           <button type="button" class="btn">
             <img src="assets/icons/search.svg" />
@@ -20,7 +22,9 @@
           <input type="text" placeholder="Search" />
         </div>
       </div>
-      <div class="search__filters txt--bold border-radius--m txt--s">
+      <div
+        class="search__filters gutter--vertical txt--bold border-radius--m txt--s"
+      >
         <div class="form__group form__group--row-wrap">
           <div class="form__group form__group--row-nowrap search__filter--cbx">
             <label>Granblue ID</label>
@@ -44,7 +48,7 @@
           </div>
         </div>
         <div class="form__group form__group--row-wrap">
-          <div class=" form__group form__group--row-nowrap search__filter--num">
+          <div class="form__group form__group--row-nowrap search__filter--num">
             <label>Min Rank</label>
             <input type="number" placeholder="0" />
           </div>
@@ -53,7 +57,7 @@
             <input type="number" placeholder="0" />
           </div>
         </div>
-        <div class="form__group form__group--row-wrap">
+        <div class="badges">
           <span class="badge inactive">Badge</span>
           <span class="badge">Badge</span>
           <span class="badge">Badge</span>
@@ -68,8 +72,8 @@
   </section>
   <section class="posts">
     <ul>
-      <li class="card" *ngFor="let post of posts">
-        <app-card-pal></app-card-pal>
+      <li *ngFor="let post of posts">
+        <app-card-pal-new></app-card-pal-new>
       </li>
     </ul>
   </section>

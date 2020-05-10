@@ -1,0 +1,64 @@
+.card {
+  text-align: center;
+  border: 2px solid var(--gray-2);
+  background-color: var(--gray-1);
+  padding: 2rem;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+  .logo {
+    img {
+      border-radius: 50%;
+    }
+  }
+  .title {
+  }
+  .subtitle {
+  }
+  .description {
+    text-align: left;
+    line-height: 1.5;
+  }
+  .badges {
+    text-align: left;
+  }
+}
+
+@supports (display: grid) {
+  @media (min-width: 550px) {
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'logo title'
+        'logo subtitle'
+        'description description'
+        'badges badges';
+      grid-gap: 1.5rem;
+      gap: 1.5rem;
+
+      > * + * {
+        margin-top: 0;
+      }
+
+      .logo {
+        grid-area: logo;
+        margin: auto;
+      }
+      .title {
+        grid-area: title;
+      }
+      .subtitle {
+        grid-area: subtitle;
+      }
+      .description {
+        grid-area: description;
+      }
+      .badges {
+        grid-area: badges;
+      }
+    }
+  }
+}

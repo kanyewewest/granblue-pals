@@ -17,10 +17,11 @@ a {
 }
 
 button,
-input[type="text"],
-input[type="number"] {
+input[type='text'],
+input[type='number'] {
   -webkit-appearance: none !important;
   outline: none !important;
+  min-width: 0;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -29,7 +30,7 @@ input[type="number"] {
   }
 }
 
-input[type="number"] {
+input[type='number'] {
   text-align: right;
   -moz-appearance: textfield !important;
 }
@@ -39,4 +40,9 @@ button {
   line-height: 0;
   background-color: unset;
   color: unset;
+}
+
+ul,
+ol {
+  list-style: none;
 }

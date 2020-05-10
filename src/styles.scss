@@ -146,7 +146,9 @@ img.emoji {
 
 .card {
   @extend .border-radius--m;
-  padding: var(--s-xl);
+  border: 2px solid var(--gray-2);
+  background-color: var(--gray-1);
+  padding: 2rem;
 }
 
 .badge {
@@ -177,8 +179,6 @@ img.emoji {
 }
 
 .form {
-  @extend .gutter--vertical;
-
   &__group {
     display: flex;
     flex-flow: column;
@@ -186,15 +186,9 @@ img.emoji {
     &--row-wrap {
       @extend .gutter--horizontal;
       flex-flow: row wrap;
-      // Force .gutter--vertical for all childs instead of parent
-      // TODO: Find a way to have similar interaction
-      // without this (too hacky) and doesn't work well with
-      // .form__group--row-wrap as last element of a form
-      // as it forces a margin on it
-      margin-bottom: 0 !important;
-
-      &:not(:last-child) > * {
-        margin-bottom: var(--s-m) !important;
+      margin-bottom: calc(-1 * var(--s-m));
+      > * {
+        margin-bottom: var(--s-m);
       }
     }
 
